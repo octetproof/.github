@@ -1,3 +1,5 @@
+![Octet](chronograph.svg)
+
 # Octet
 
 **A device was here, at this time.** Octet is proof of location. Proof that a known device is where it claims to be, signed in hardware. Live for iOS and Android.
