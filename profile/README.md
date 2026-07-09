@@ -1,4 +1,4 @@
-![Octet](chronograph.svg)
+![Octet](chronograph.gif)
 
 # Octet
 
