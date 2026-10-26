@@ -22,13 +22,13 @@ Octet learns location from inertial motion, RF geometry, GPS, and signals most s
 | [octet-sdk-android](https://github.com/octetproof/octet-sdk-android) | Android SDK. Maven. A license key unlocks it. | Proprietary |
 | [octet-verify](https://github.com/octetproof/octet-verify) | Open-source Rust verifier. Checks a proof offline, against the key the proof carries. No callback to Octet. | Apache-2.0 |
 | [octet-attest-verify](https://github.com/octetproof/octet-attest-verify) | Offline App Attest and Play Integrity verification. | Apache-2.0 |
-| [octet-policy](https://github.com/octetproof/octet-policy) | Open-source policy library. A policy answers a location question. Your code enforces the result. | Apache-2.0 |
 
 You do not have to trust Octet. The proof is checked by octet-verify, open source, offline, with no callback. Octet's own proof storage holds bytes for 24 hours and is treated as untrusted by the verifier.
 
 ## Start here
 
 - **Docs:** https://octetproof.com/docs/
+- **Policies:** write them in Magistrate, https://magistrate.octetproof.com/. Policies are signed bundles decided by the Octet policy engine.
 - **For agents:** https://octetproof.com/llms.txt and https://octetproof.com/agents.md
 - **OpenAPI 3.1:** https://octetproof.com/openapi.yaml
 - **Free 90-day trial key:** https://sdk.octetproof.com/signup
