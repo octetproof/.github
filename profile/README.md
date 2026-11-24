@@ -4,15 +4,15 @@
 
 **A device was here, at this time.** Octet is proof of location. Proof that a known device is where it claims to be, signed in hardware. Live for iOS and Android.
 
-Ask whether a device is inside or outside a region. Get back a signed yes or no, verifiable offline. No coordinates leave the device.
+Ask whether a device is inside a region and get back a verdict (YES, NO or INDETERMINATE) with a signed proof, verifiable offline. A policy can require, for example, that a payment is approved from a phone in the office. Your application decides what to do with the verdict. You can configure the proof to carry no coordinates.
 
 ## Why it exists
 
-When you log in, send money, or hit buy, your phone attaches a location to the action. It reports what it was told, not what is true. Every signal it exposes can be faked: GPS, IP, the location services your apps rely on. $300 of hardware spoofs GPS. A five-dollar VPN moves your IP across the world. One free spoofing app has more than 50 million installs.
+Every credential a system checks can be copied or synthesized: a password, a document, a face. Even when credentials work correctly, they work the same way wherever they are used, for the right person and the wrong person alike.
 
-Every credential a system checks can be copied: a password, a document, a face. One thing cannot. Where your body is. You are here. You cannot also be there. The attacker wearing your identity is somewhere else.
+Location could tell them apart, but the location an application sees cannot be trusted. When a user logs in, sends money or hits buy, their phone attaches a location to the action. It reports what it was told, not what is true. Every signal it exposes can be faked: GPS, IP address, the location services apps rely on.
 
-Octet learns location from inertial motion, RF geometry, GPS, and signals most systems ignore, then signs it into a single proof. What leaves the device is a predicate: a hardware-signed yes or no against a policy. An attacker can steal everything except where the real user is.
+The Octet SDK makes location into a factor. It builds up a location on the device, learning from RF, inertial sensors and on-device data, including signals most systems ignore. It checks each signal for signs that it has been manipulated, and then it signs the result.
 
 ## Repositories
 
