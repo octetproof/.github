@@ -18,8 +18,12 @@ The Octet SDK makes location into a factor. It builds up a location on the devic
 
 | Repo | What it is | License |
 | --- | --- | --- |
-| [octet-sdk-ios](https://github.com/octetproof/octet-sdk-ios) | iOS SDK. Binary via Swift Package Manager. A license key unlocks it. | Proprietary |
-| [octet-sdk-android](https://github.com/octetproof/octet-sdk-android) | Android SDK. Maven. A license key unlocks it. | Proprietary |
+| [octet-sdk-ios](https://github.com/octetproof/octet-sdk-ios) | iOS SDK. Swift Package Manager. Activates with App Attest, so there is no licence key to ship. | Proprietary |
+| [octet-sdk-android](https://github.com/octetproof/octet-sdk-android) | Android SDK. Maven. Activates with hardware key attestation, so there is no licence key to ship. | Proprietary |
+| [octet-sdk-react-native](https://github.com/octetproof/octet-sdk-react-native) | React Native package on npm. Binds the iOS and Android SDKs. | Proprietary |
+| [octet-magistrate-ios](https://github.com/octetproof/octet-magistrate-ios) | Magistrate for iOS. Asks your location policy's question and returns the answer with a signed receipt. | Proprietary |
+| [octet-magistrate-android](https://github.com/octetproof/octet-magistrate-android) | Magistrate for Android. The same, as an AAR on Maven. | Proprietary |
+| [octet-browser](https://github.com/octetproof/octet-browser) | Octet Browser release downloads: the browser script and the edge service. A licence key unlocks it. | Proprietary |
 | [octet-verify](https://github.com/octetproof/octet-verify) | Open-source Rust verifier. Checks a proof offline, against the key the proof carries. No callback to Octet. | Apache-2.0 |
 | [octet-attest-verify](https://github.com/octetproof/octet-attest-verify) | Offline App Attest and Play Integrity verification. | Apache-2.0 |
 
@@ -32,14 +36,14 @@ You do not have to trust Octet. The proof is checked by octet-verify, open sourc
 - **Policies:** write them in Magistrate, https://magistrate.octetproof.com/. Policies are signed bundles decided by the Octet policy engine.
 - **For agents:** https://octetproof.com/llms.txt and https://octetproof.com/agents.md
 - **OpenAPI 3.1:** https://octetproof.com/openapi.yaml
-- **License key:** free for up to 1,000 unique devices a month, https://sdk.octetproof.com/signup
+- **Register your app:** free for up to 1,000 unique devices a month, https://sdk.octetproof.com/signup
 
 Integrating takes about ten minutes: add the package, request the runtime permission, call `Octet.start`, then read a verdict.
 
 ```swift
 import OctetSDK
 
-let sdk = try await Octet.start(config: OctetConfig(licenseKey: "octet_live_…"))
+let sdk = try await Octet.start(config: OctetConfig())
 let verdict = await sdk.loc.isWithin(region: .country(isoCode: "US"))
 // verdict.result → YES / NO / INDETERMINATE
 // verdict.proof  → signed on device, verifiable offline
