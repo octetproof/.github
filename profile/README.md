@@ -27,7 +27,7 @@ The Octet SDK makes location into a factor. It builds up a location on the devic
 | [octet-verify](https://github.com/octetproof/octet-verify) | Open-source Rust verifier. Checks a proof offline, against the key the proof carries. No callback to Octet. | Apache-2.0 |
 | [octet-attest-verify](https://github.com/octetproof/octet-attest-verify) | Offline App Attest and Play Integrity verification. | Apache-2.0 |
 
-You do not have to trust Octet. The proof is checked by octet-verify, open source, offline, with no callback. Storing proofs with Octet is opt-in, and the verifier does not rely on Octet's storage.
+You do not have to trust Octet. The proof is checked by octet-verify, open source, offline, with no callback. Uploading proofs to Octet is opt-in. Octet keeps an uploaded proof for at most 24 hours, and the verifier does not rely on that copy.
 
 ## Start here
 
